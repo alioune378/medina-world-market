@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Medina World Market &amp; Restaurant</title>
+<meta name="description" content="Global groceries, authentic African ingredients and freshly prepared meals at 3116 S Hamilton Road, Columbus, Ohio. Call (614) 322-0076.">
+<meta property="og:title" content="Medina World Market & Restaurant — Columbus, Ohio">
+<meta property="og:description" content="A world of flavor, one destination: international market and restaurant on S Hamilton Road, Columbus.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/medina-storefront.jpg">
+<meta name="theme-color" content="#0B4A37">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<!-- Structured data: confirmed details only (name, address, phone). Hours omitted until verified by the owner. -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":["GroceryStore","Restaurant"],"name":"Medina World Market & Restaurant","telephone":"+1-614-322-0076","address":{"@type":"PostalAddress","streetAddress":"3116 S Hamilton Road","addressLocality":"Columbus","addressRegion":"OH","postalCode":"43232","addressCountry":"US"},"servesCuisine":["African","International"],"image":"images/medina-storefront.jpg"}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="demobar" role="note">
+  <p><b>Demonstration website</b> proposed by Dalal Technologies<span class="long"> · menu, products, prices and services are illustrative until confirmed by Medina · no real orders or payments</span><span class="short"> · illustrative content, no real orders</span> · <a href="#launch">Details</a></p>
+</div>
+
+<header class="hdr" id="hdr">
+  <div class="hdr-in">
+    <a class="brand" href="#home" aria-label="Medina World Market and Restaurant, home">
+      <span class="brand-name">MEDINA</span>
+      <span class="brand-sub">World Market <i>&amp;</i> Restaurant</span>
+    </a>
+    <nav class="mainnav" id="mainnav" aria-label="Main">
+      <a href="#home" data-nav="home">Home</a>
+      <a href="#restaurant" data-nav="restaurant">Restaurant</a>
+      <a href="#market" data-nav="market">World Market</a>
+      <a href="#specials" data-nav="specials">Specials</a>
+      <a href="#story" data-nav="story">Our Story</a>
+      <a href="#visit" data-nav="visit">Visit Us</a>
+    </nav>
+    <div class="hdr-act">
+      <a class="b b-saffron b-s hdr-order" href="#restaurant">Order Food</a>
+      <a class="cart-ic" href="#cart" id="cartTop" aria-label="Cart, 0 items">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M5 7h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 9V6a3 3 0 0 1 6 0v3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <span class="badge" data-count>0</span>
+      </a>
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="mainnav" aria-label="Open menu"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- ================= HOME ================= -->
+<section class="view" data-view="home" aria-label="Home">
+  <div class="hero">
+    <div class="hero-mosaic">
+      <figure class="m m-aisle"><img src="images/medina-market-aisle.jpg" alt="Inside Medina's market: shelves of palm oil, packaged goods and flour bags along a long aisle" width="1448" height="1086" fetchpriority="high"></figure>
+      <figure class="m m-store"><img src="images/medina-storefront.jpg" alt="Medina World Market &amp; Restaurant storefront at 3116 S Hamilton Road, with African Food and Halal Meat signs" width="1448" height="1086" fetchpriority="high"></figure>
+    </div>
+    <div class="hero-panel">
+      <p class="eyebrow-s">Columbus, Ohio · S Hamilton Road</p>
+      <h1>A World of Flavor. <em>One Destination.</em></h1>
+      <p class="hero-sub">Discover global groceries, authentic African ingredients, and freshly prepared meals in Columbus.</p>
+      <div class="hero-cta">
+        <a class="b b-saffron" href="#market">Explore the Market</a>
+        <a class="b b-ghost-l" href="#restaurant">Discover the Restaurant</a>
+      </div>
+      <p class="hero-meta"><span id="openNow"></span><span class="sep">·</span><a href="tel:+16143220076">(614) 322-0076</a></p>
+    </div>
+  </div>
+
+  <section class="aisles wrap" aria-labelledby="aisles-h">
+    <div class="sec-head">
+      <h2 id="aisles-h">Shop by <em>aisle</em></h2>
+      <a class="arrow-link" href="#market">All products</a>
+    </div>
+    <div class="aisle-grid" id="aisleGrid"></div>
+  </section>
+
+  <section class="kitchen" aria-labelledby="kitchen-h">
+    <div class="kitchen-in wrap">
+      
+      <div class="kitchen-board">
+        <h2 id="kitchen-h">From the <em>kitchen</em></h2>
+        <p class="lead">Rice plates, the grill and slow-cooked stews, made to order for pickup.</p>
+        <p class="tag-illus">Sample menu · prices illustrative until confirmed</p>
+        <a class="b b-saffron" href="#restaurant">Discover the Restaurant</a>
+      </div>
+      <ul class="board" id="homeBoard"></ul>
+    </div>
+  </section>
+
+  <section class="week wrap" aria-labelledby="week-h">
+    <div class="sec-head"><h2 id="week-h">This <em>week</em></h2><a class="arrow-link" href="#specials">All specials</a></div>
+    <div class="week-grid">
+      <div class="offers" id="homeOffers"></div>
+      <div class="pickup-note">
+        <h3>Order ahead, skip the line</h3>
+        <p>Choose your dishes, pick a time, and collect at the counter. Shop the aisles while you're there.</p>
+        <ol class="flow"><li><b>Order</b> online</li><li><b>30 min</b> prep</li><li><b>Collect</b> in store</li></ol>
+        <a class="arrow-link" href="#restaurant">Start a pickup order</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="visitband" aria-labelledby="vb-h">
+    <img src="images/medina-storefront.jpg" alt="Medina World Market &amp; Restaurant storefront and parking lot on S Hamilton Road" width="1448" height="1086" loading="lazy">
+    <div class="visitcard">
+      <h2 id="vb-h">Visit <em>Medina</em></h2>
+      <p class="vc-addr">3116 S Hamilton Road<br>Columbus, OH 43232</p>
+      <p class="vc-tel"><a href="tel:+16143220076">(614) 322-0076</a></p>
+      <p class="vc-hours">Listed hours: 9:00 AM – 12:00 AM daily</p>
+      <div class="row-b">
+        <a class="b b-em" href="https://www.google.com/maps/dir/?api=1&amp;destination=3116+S+Hamilton+Road+Columbus+OH+43232" target="_blank" rel="noopener">Get directions</a>
+        <a class="b b-line" href="tel:+16143220076">Call</a>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ================= RESTAURANT ================= -->
+<section class="view" data-view="restaurant" aria-labelledby="r-h" hidden>
+  <header class="phead phead-r">
+    <div class="phead-txt">
+      <h1 id="r-h">The <em>Restaurant</em></h1>
+      <p>African and international plates, cooked to order. Order ahead for pickup at the counter.</p>
+      <p class="flags"><span class="flag f-saffron">Pickup ordering · demonstration</span><span class="flag">Prices illustrative until confirmed</span></p>
+    </div>
+    <figure class="phead-img"><img src="images/medina-storefront.jpg" alt="Medina World Market &amp; Restaurant sign above the store entrance" width="1448" height="1086"></figure>
+  </header>
+  <nav class="catbar" id="menuCats" aria-label="Menu categories"></nav>
+  <div class="menu-layout wrap">
+    <div id="menuBody"></div>
+    <aside class="orderpanel" id="orderPanel" aria-label="Your order"></aside>
+  </div>
+  <section class="catering wrap" aria-labelledby="ct-h">
+    <div>
+      <h2 id="ct-h">Catering <em>inquiries</em></h2>
+      <p>Naming ceremonies, Eid gatherings, office lunches. Tell Medina what you're planning. <span class="muted">Proposed feature, pending confirmation that catering is offered.</span></p>
+    </div>
+    <form class="form" id="cateringForm" novalidate>
+      <div class="two">
+        <div class="field"><label for="ctName">Name</label><input id="ctName" autocomplete="name" aria-describedby="ctNameErr"><p class="err" id="ctNameErr"></p></div>
+        <div class="field"><label for="ctPhone">Phone</label><input id="ctPhone" type="tel" inputmode="tel" autocomplete="tel" aria-describedby="ctPhoneErr"><p class="err" id="ctPhoneErr"></p></div>
+        <div class="field"><label for="ctDate">Event date</label><input id="ctDate" type="date" aria-describedby="ctDateErr"><p class="err" id="ctDateErr"></p></div>
+        <div class="field"><label for="ctGuests">Guests</label><input id="ctGuests" type="number" min="10" inputmode="numeric" aria-describedby="ctGuestsErr"><p class="err" id="ctGuestsErr"></p></div>
+      </div>
+      <div class="field"><label for="ctNotes">What would you like served?</label><textarea id="ctNotes" rows="2"></textarea></div>
+      <button class="b b-em" type="submit">Send inquiry (demo)</button>
+      <p class="formmsg" id="cateringMsg" role="status"></p>
+    </form>
+  </section>
+</section>
+
+<!-- ================= MARKET ================= -->
+<section class="view" data-view="market" aria-labelledby="m-h" hidden>
+  <header class="phead phead-m">
+    <div class="phead-txt">
+      <h1 id="m-h">The World <em>Market</em></h1>
+      <p>Pantry staples, halal meats and favorites from across Africa and beyond. Pick up in store, or ship eligible items across the US.</p>
+      <div class="bigsearch">
+        <label class="sr" for="q">Search the market</label>
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="q" type="search" placeholder="Search rice, palm oil, Maggi…" autocomplete="off">
+      </div>
+    </div>
+  </header>
+  <nav class="catbar catbar-m" id="catChips" aria-label="Categories"></nav>
+  <div class="wrap shop">
+    <div class="toolbar">
+      <p class="count" id="resultLine" role="status"></p>
+      <div class="toggles" role="group" aria-label="Filters">
+        <button class="tgl" data-tgl="ship" aria-pressed="false">Ships nationwide</button>
+        <button class="tgl" data-tgl="stock" aria-pressed="false">In stock</button>
+        <button class="tgl" data-tgl="fav" aria-pressed="false">Favorites</button>
+        <label class="sr" for="sort">Sort products</label>
+        <select id="sort"><option value="feat">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="name">Name A–Z</option></select>
+      </div>
+    </div>
+    <div class="plist" id="productGrid"></div>
+    <p class="note">Products and brands shown are examples of what an international grocer typically carries; Medina's confirmed inventory, prices and product photography will replace them.</p>
+  </div>
+</section>
+
+<!-- ================= PRODUCT ================= -->
+<section class="view" data-view="item" aria-label="Product details" hidden>
+  <div class="wrap pdp" id="itemView"></div>
+</section>
+
+<!-- ================= SPECIALS ================= -->
+<section class="view" data-view="specials" aria-labelledby="sp-h" hidden>
+  <header class="phead phead-plain"><div class="phead-txt"><h1 id="sp-h">Weekly <em>specials</em></h1><p>Kitchen and market offers, posted by Medina each week.</p></div></header>
+  <div class="wrap"><div class="offers offers-wide" id="allOffers"></div><div id="reorderBox"></div></div>
+</section>
+
+<!-- ================= STORY ================= -->
+<section class="view" data-view="story" aria-labelledby="st-h" hidden>
+  <div class="wrap story">
+    <div>
+      <h1 id="st-h">Our <em>Story</em></h1>
+      <p class="lead">One address on S Hamilton Road, two reasons to stop: a market stocked with the ingredients of many homes, and a kitchen cooking the dishes that go with them.</p>
+      <p>Medina World Market &amp; Restaurant has served Columbus's African and international communities since 2012. Shoppers come for rice by the bag, halal meats, spices and familiar brands; diners come for plates from the grill and stews that take their time.</p>
+      <p class="muted">This page will carry Medina's own story — the founders, the kitchen's signature dishes, the people behind the counter — written with the owner.</p>
+    </div>
+    <div class="story-grid">
+      <img src="images/medina-market-aisle.jpg" alt="A market aisle at Medina stocked with palm oil and flour" loading="lazy" width="1448" height="1086">
+      <img src="images/medina-storefront.jpg" alt="Medina's storefront on S Hamilton Road" loading="lazy" width="1448" height="1086">
+    </div>
+  </div>
+  <section class="wrap reviews" aria-labelledby="rv-h">
+    <h2 id="rv-h">Customer <em>reviews</em></h2>
+    <p>This space shows approved, attributable reviews only — named reviewers, with their source — once Medina chooses which to feature. None are shown in this demonstration.</p>
+  </section>
+</section>
+
+<!-- ================= VISIT ================= -->
+<section class="view" data-view="visit" aria-labelledby="vi-h" hidden>
+  <div class="wrap visit">
+    <figure><img src="images/medina-storefront.jpg" alt="Medina World Market &amp; Restaurant storefront and parking lot on S Hamilton Road" width="1448" height="1086"></figure>
+    <div>
+      <h1 id="vi-h">Visit <em>Us</em></h1>
+      <dl class="info">
+        <dt>Address</dt><dd>3116 S Hamilton Road<br>Columbus, OH 43232</dd>
+        <dt>Phone</dt><dd><a href="tel:+16143220076">(614) 322-0076</a></dd>
+        <dt>Hours</dt><dd>9:00 AM – 12:00 AM daily, as listed publicly. Call to confirm holiday hours.</dd>
+        <dt>Parking</dt><dd>Lot directly in front of the store.</dd>
+      </dl>
+      <div class="row-b">
+        <a class="b b-em" href="https://www.google.com/maps/dir/?api=1&amp;destination=3116+S+Hamilton+Road+Columbus+OH+43232" target="_blank" rel="noopener">Directions in Google Maps</a>
+        <a class="b b-line" href="tel:+16143220076">Call the store</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CART ================= -->
+<section class="view" data-view="cart" aria-labelledby="c-h" hidden>
+  <div class="wrap checkout" id="checkoutView"></div>
+</section>
+
+<!-- ================= OWNER ================= -->
+<section class="view" data-view="owner" aria-labelledby="o-h" hidden>
+  <header class="phead phead-dark"><div class="phead-txt"><h1 id="o-h">Owner <em>dashboard</em></h1><p>How Medina's team would run online orders day to day. Mock data; changes stay in this browser.</p></div></header>
+  <nav class="catbar" id="ownerTabs" aria-label="Dashboard sections">
+    <button data-otab="orders" aria-pressed="true">Orders</button>
+    <button data-otab="menu" aria-pressed="false">Menu &amp; prices</button>
+    <button data-otab="specials" aria-pressed="false">Specials</button>
+    <button data-otab="sales" aria-pressed="false">Sales</button>
+  </nav>
+  <div class="wrap owner" id="ownerView"></div>
+</section>
+
+<!-- ================= ABOUT DEMO ================= -->
+<section class="view" data-view="launch" aria-labelledby="l-h" hidden>
+  <div class="wrap launch">
+    <h1 id="l-h">About this <em>demonstration</em></h1>
+    <p class="lead">Dalal Technologies built this proposal to show how Medina could take restaurant orders online, make shopping easier for regulars, and sell eligible groceries beyond Ohio.</p>
+    <h2>What is real, what is illustrative</h2>
+    <table class="stack status">
+      <thead><tr><th>Area</th><th>Status</th><th>Detail</th></tr></thead>
+      <tbody>
+        <tr><td>Name, address, phone</td><td><span class="st st-ok">Verified</span></td><td>3116 S Hamilton Road, Columbus, OH 43232 · (614) 322-0076.</td></tr>
+        <tr><td>Hours, founding year</td><td><span class="st st-owner">To confirm</span></td><td>From public listings (9 AM–12 AM daily; since 2012). Kept out of search-engine data until confirmed.</td></tr>
+        <tr><td>Store photographs</td><td><span class="st st-ok">Authentic</span></td><td>Medina's own photos; cropped and tone-adjusted only.</td></tr>
+        <tr><td>Menu, dishes, prices</td><td><span class="st st-illus">Illustrative</span></td><td>Based on dishes mentioned publicly. Dish photos appear once Medina supplies them.</td></tr>
+        <tr><td>Products, brands, prices, stock</td><td><span class="st st-illus">Illustrative</span></td><td>Examples only. Product photos appear once licensed packshots or store photos are supplied.</td></tr>
+        <tr><td>Menu, cart, options, totals, favorites, reorder</td><td><span class="st st-work">Working demo</span></td><td>Fully functional; saved on this device only.</td></tr>
+        <tr><td>Checkout and confirmations</td><td><span class="st st-work">Simulated</span></td><td>No card details collected; nothing is sent to the store.</td></tr>
+        <tr><td>Payments, order alerts, shipping rates, SMS/email</td><td><span class="st st-back">Backend needed</span></td><td>Require production accounts and configuration.</td></tr>
+        <tr><td>Local delivery, nationwide shipping, catering</td><td><span class="st st-owner">Owner approval</span></td><td>Proposed services for the owner to decide on.</td></tr>
+      </tbody>
+    </table>
+    <h2>What launch requires</h2>
+    <div class="req">
+      <div><h3>Payments</h3><p>Hosted Square or Stripe checkout, so card data never touches the site.</p></div>
+      <div><h3>Inventory</h3><p>Catalogue synced from the point-of-sale system or a simple admin, with stock and shipping eligibility per product.</p></div>
+      <div><h3>Order alerts</h3><p>New orders pushed to a counter tablet with sound and SMS backup; customers texted at each step.</p></div>
+      <div><h3>Shipping</h3><p>Live USPS/UPS/FedEx rates through a serverless function and a rating service such as Shippo or EasyPost.</p></div>
+      <div><h3>Taxes</h3><p>Ohio and Franklin County rules for prepared food versus groceries, confirmed with Medina's accountant.</p></div>
+      <div><h3>Accounts &amp; consent</h3><p>Optional sign-in for favorites and reorders; recorded opt-ins, STOP handling, one-click unsubscribe.</p></div>
+    </div>
+    <p class="row-b"><a class="b b-line" href="#owner">Open the owner dashboard demo</a></p>
+  </div>
+</section>
+</main>
+
+<footer class="ftr">
+  <div class="wrap ftr-top">
+    <div class="ftr-sign">
+      <h2>Hear about <em>specials</em> first</h2>
+      <p>Weekly kitchen and market offers. Opt in by email, text, or both; unsubscribe any time.</p>
+    </div>
+    <form class="form signup" id="signupForm" novalidate>
+      <div class="two">
+        <div class="field"><label for="suEmail">Email</label><input id="suEmail" type="email" autocomplete="email" aria-describedby="suEmailErr"><p class="err" id="suEmailErr"></p></div>
+        <div class="field"><label for="suPhone">Mobile (optional)</label><input id="suPhone" type="tel" inputmode="tel" autocomplete="tel" aria-describedby="suPhoneErr"><p class="err" id="suPhoneErr"></p></div>
+      </div>
+      <label class="chk"><input type="checkbox" id="suEmailOk"> Email me offers from Medina.</label>
+      <label class="chk"><input type="checkbox" id="suSmsOk"> Text me offers. Msg &amp; data rates may apply; reply STOP to opt out.</label>
+      <p class="err" id="suConsentErr"></p>
+      <button class="b b-saffron" type="submit">Sign me up (demo)</button>
+      <p class="formmsg" id="signupMsg" role="status"></p>
+    </form>
+  </div>
+  <div class="wrap ftr-main">
+    <div>
+      <span class="brand-name">MEDINA</span>
+      <span class="brand-sub">World Market <i>&amp;</i> Restaurant</span>
+      <p>3116 S Hamilton Road, Columbus, OH 43232<br><a href="tel:+16143220076">(614) 322-0076</a></p>
+    </div>
+    <nav class="ftr-nav" aria-label="Footer">
+      <a href="#restaurant">Restaurant</a><a href="#market">World Market</a><a href="#specials">Specials</a><a href="#story">Our Story</a>
+      <a href="#visit">Visit Us</a><a href="#owner">Owner dashboard (demo)</a><a href="#launch">About this demo</a>
+    </nav>
+    <div class="dalal">
+      <p class="dalal-by">Website proposal designed and built by</p>
+      <a class="dalal-logo" href="https://dalaltechnologies.com/en/" target="_blank" rel="noopener" aria-label="Dalal Technologies">
+        <img src="images/dalal-logo.png" alt="Dalal Technologies" onload="this.nextElementSibling.hidden=true" onerror="this.remove()">
+        <span class="dalal-word"><b>DALAL</b> <i>TECHNOLOGIES</i></span>
+      </a>
+      <p class="dalal-tag">Digital Experiences. Smarter Business Solutions.</p>
+      <p class="dalal-contact"><a href="https://dalaltechnologies.com/en/" target="_blank" rel="noopener">dalaltechnologies.com</a><br><a href="mailto:info@dalaltechnologies.com">info@dalaltechnologies.com</a><br><a href="tel:+17189123441">+1 (718) 912-3441</a><br>228 Park Ave S, PMB 473086, New York, NY 10003</p>
+    </div>
+  </div>
+</footer>
+
+<a class="orderbar" id="orderBar" href="#cart" hidden></a>
+
+<nav class="tabbar" aria-label="Quick navigation">
+  <a href="#home" data-nav="home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-6 8 6v8a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1z"/></svg>Home</a>
+  <a href="#restaurant" data-nav="restaurant"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v8a2 2 0 0 0 2 2v8M7 3v6M11 3v6M17 21V3c-2 1-3 4-3 8h3"/></svg>Restaurant</a>
+  <a href="#market" data-nav="market"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9l2-5h12l2 5M4 9h16M4 9v11h16V9M9 20v-6h6v6"/></svg>Market</a>
+  <a href="#cart" data-nav="cart" class="tb-cart"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8zM9 9V6a3 3 0 0 1 6 0v3"/></svg>Cart<span class="badge" data-count>0</span></a>
+  <a href="#visit" data-nav="visit"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6-5.6-6-11a6 6 0 0 1 12 0c0 5.4-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Visit</a>
+</nav>
+
+<dialog class="sheet" id="dishDlg" aria-labelledby="dishTitle"></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
