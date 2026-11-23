@@ -83,54 +83,40 @@ window.MEDINA = (function () {
     { id: "stew", label: "Stews & traditional" }, { id: "sides", label: "Sides" }, { id: "drinks", label: "Beverages" }
   ];
 
-  /* storage: shelf | chilled | frozen. ship = proposed nationwide eligibility (owner to confirm). weight in lb. */
+  /* REAL branded products with REAL package photos (images/products/, same photo set as the
+     Africa Supermarket demo; photo source sites listed in `credit`).
+     NOT confirmed as Medina inventory. Prices, stock and shipping weights are ILLUSTRATIVE.
+     Photos belong to their owners: obtain permission or manufacturer images before public commercial use.
+     storage: shelf | chilled | frozen. ship = proposed nationwide eligibility. weight = est. shipping lb. */
   const PRODUCTS = [
-    { id: "jasmine-rice-20", name: "Jasmine Rice", brand: "Royal Umbrella", size: "20 lb bag", cat: "rice", price: 32.99, weight: 20.4, storage: "shelf", ship: true, stock: "in" },
-    { id: "parboiled-rice-10", name: "Long Grain Parboiled Rice", brand: "Ben's Original", size: "10 lb bag", cat: "rice", price: 17.49, weight: 10.2, storage: "shelf", ship: true, stock: "in" },
-    { id: "broken-rice", name: "Fragrant Broken Rice", brand: "", size: "10 lb bag", cat: "rice", price: 15.99, weight: 10.2, storage: "shelf", ship: true, stock: "low" },
-    { id: "gari-white", name: "White Gari", brand: "Tropical Sun", size: "1.5 kg", cat: "rice", price: 8.99, weight: 3.4, storage: "shelf", ship: true, stock: "in" },
-    { id: "fufu-flour", name: "Plantain Fufu Flour", brand: "Tropical Sun", size: "681 g", cat: "rice", price: 6.49, weight: 1.6, storage: "shelf", ship: true, stock: "in" },
-    { id: "semolina", name: "Semolina", brand: "Golden Penny", size: "2 kg", cat: "rice", price: 9.99, weight: 4.5, storage: "shelf", ship: true, stock: "in" },
-    { id: "maggi-cubes", name: "Seasoning Cubes", brand: "Maggi", size: "100 cubes", cat: "spices", price: 6.99, weight: 0.9, storage: "shelf", ship: true, stock: "in" },
-    { id: "curry-powder", name: "Curry Powder", brand: "Tropical Sun", size: "100 g", cat: "spices", price: 2.99, weight: 0.3, storage: "shelf", ship: true, stock: "in" },
-    { id: "suya-spice", name: "Suya Spice", brand: "", size: "200 g", cat: "spices", price: 5.49, weight: 0.5, storage: "shelf", ship: true, stock: "in" },
-    { id: "dried-pepper", name: "Ground Scotch Bonnet", brand: "Tropical Sun", size: "100 g", cat: "spices", price: 3.49, weight: 0.3, storage: "shelf", ship: true, stock: "out" },
+    { id: "tropical-sun-fragrant-rice", name: "Fragrant Rice", brand: "Tropical Sun", size: "", cat: "rice", price: 15.99, weight: 5.2, storage: "shelf", ship: true, stock: "in", photo: "08_tropical_sun_fragrant_rice.webp", credit: "tropicalsunfoods.com" },
+    { id: "ijebu-garri", name: "Ijebu Garri", brand: "Afrigrid", size: "", cat: "rice", price: 6.99, weight: 2.2, storage: "shelf", ship: true, stock: "in", photo: "07_ijebu_garri_afrigrid.webp", credit: "afrigrid.us" },
+    { id: "cocoyam-fufu-flour", name: "Cocoyam Fufu Flour", brand: "Tropiway", size: "", cat: "rice", price: 6.49, weight: 1.8, storage: "shelf", ship: true, stock: "in", photo: "01_tropiway_cocoyam_fufu_flour.webp", credit: "africanmarketonline.com" },
+    { id: "honey-beans", name: "Honey Beans (Oloyin)", brand: "", size: "5 lb", cat: "rice", price: 12.99, weight: 5.2, storage: "shelf", ship: true, stock: "low", photo: "10_honey_beans_oloyin_5lbs.webp", credit: "asherafricanmarket.com" },
+    { id: "maggi-chicken-cubes", name: "Chicken Seasoning Cubes", brand: "Maggi", size: "", cat: "spices", price: 4.99, weight: 0.9, storage: "shelf", ship: true, stock: "in", photo: "09_maggi_chicken_cube.webp", credit: "a1cashandcarry.com" },
+    { id: "titus-sardines", name: "Sardines in Soybean Oil", brand: "Titus", size: "", cat: "pantry", price: 2.49, weight: 0.5, storage: "shelf", ship: true, stock: "in", photo: "03_titus_sardines_in_soybean_oil.webp", credit: "shop.pathmark.com" },
+    { id: "indomie-onion-chicken", name: "Onion Chicken Flavor Instant Noodles", brand: "Indomie", size: "70 g packs", cat: "pantry", price: 1.29, weight: 0.2, storage: "shelf", ship: true, stock: "in", photo: "12_indomie_onion_chicken_noodles.webp", credit: "africanmarketonline.com" },
+    { id: "rosa-margarine", name: "Margarine", brand: "Rosa", size: "450 g", cat: "pantry", price: 4.49, weight: 1.2, storage: "shelf", ship: false, stock: "in", photo: "02_rosa_margarine_450g.webp", credit: "africanmarketonline.com", note: "heat-sensitive spread, shipping to be reviewed" },
+    { id: "milo-tin", name: "Milo Chocolate Malt Drink, Tin", brand: "Nestlé", size: "1.5 kg", cat: "breakfast", price: 24.99, weight: 3.8, storage: "shelf", ship: true, stock: "in", photo: "11_nestle_milo_tin_1_5kg.webp", credit: "africanmarketonline.com" },
+    { id: "nido-fortificada", name: "NIDO Fortificada Dry Whole Milk", brand: "Nestlé", size: "12.6 oz", cat: "breakfast", price: 9.99, weight: 1.1, storage: "shelf", ship: true, stock: "in", photo: "04_nestle_nido_fortificada_dry_whole_milk.webp", credit: "heb.com" },
+    { id: "peak-evaporated-milk", name: "Evaporated Milk", brand: "Peak", size: "13 oz", cat: "breakfast", price: 2.49, weight: 1.0, storage: "shelf", ship: true, stock: "in", photo: "05_peak_evaporated_milk_13oz.webp", credit: "heb.com" },
+    { id: "birds-custard", name: "Original Custard Powder", brand: "Bird's", size: "", cat: "breakfast", price: 6.99, weight: 1.4, storage: "shelf", ship: true, stock: "in", photo: "06_birds_original_custard_powder.webp", credit: "kroger.com" },
     { id: "goat-meat", name: "Halal Goat Meat, Bone-in", brand: "Butcher counter", size: "Per lb", cat: "halal", price: 8.99, weight: 1, storage: "chilled", ship: false, stock: "in" },
-    { id: "lamb-leg", name: "Halal Lamb Leg", brand: "Butcher counter", size: "Per lb", cat: "halal", price: 10.49, weight: 1, storage: "chilled", ship: false, stock: "low" },
-    { id: "whole-chicken", name: "Halal Whole Chicken", brand: "", size: "Approx. 4 lb", cat: "halal", price: 12.99, weight: 4, storage: "frozen", ship: false, stock: "in" },
-    { id: "beef-stew", name: "Halal Beef Stew Cuts", brand: "Butcher counter", size: "Per lb", cat: "halal", price: 7.99, weight: 1, storage: "chilled", ship: false, stock: "in" },
-    { id: "palm-oil", name: "Red Palm Oil", brand: "Tropical Sun", size: "1 L", cat: "pantry", price: 7.99, weight: 2.3, storage: "shelf", ship: true, stock: "in", liquid: true },
-    { id: "veg-oil", name: "Vegetable Oil", brand: "Unifresh", size: "3 L", cat: "pantry", price: 11.99, weight: 6.8, storage: "shelf", ship: true, stock: "in", liquid: true },
-    { id: "tomato-paste", name: "Double Concentrated Tomato Paste", brand: "Gino", size: "400 g tin", cat: "pantry", price: 2.49, weight: 1, storage: "shelf", ship: true, stock: "in" },
-    { id: "evap-milk", name: "Evaporated Milk", brand: "Peak", size: "410 g tin", cat: "pantry", price: 2.29, weight: 1, storage: "shelf", ship: true, stock: "in" },
-    { id: "egusi", name: "Ground Egusi (Melon Seed)", brand: "", size: "400 g", cat: "pantry", price: 8.49, weight: 1, storage: "shelf", ship: true, stock: "in" },
-    { id: "malta", name: "Malt Drink", brand: "Malta Guinness", size: "6 × 330 ml", cat: "drinks", price: 8.99, weight: 5.6, storage: "shelf", ship: true, stock: "in", liquid: true },
-    { id: "vimto", name: "Fruit Soft Drink", brand: "Vimto", size: "330 ml can", cat: "drinks", price: 1.49, weight: 0.8, storage: "shelf", ship: true, stock: "in", liquid: true },
-    { id: "hibiscus-dried", name: "Dried Hibiscus Flowers", brand: "", size: "200 g", cat: "drinks", price: 5.99, weight: 0.5, storage: "shelf", ship: true, stock: "in" },
-    { id: "plantain-chips", name: "Plantain Chips", brand: "", size: "85 g", cat: "snacks", price: 2.49, weight: 0.3, storage: "shelf", ship: true, stock: "in" },
-    { id: "chin-chin", name: "Chin Chin", brand: "", size: "300 g", cat: "snacks", price: 4.99, weight: 0.8, storage: "shelf", ship: true, stock: "in" },
-    { id: "noodles", name: "Instant Noodles, Chicken", brand: "Indomie", size: "Carton of 40", cat: "snacks", price: 21.99, weight: 7.2, storage: "shelf", ship: true, stock: "in" },
-    { id: "frozen-tilapia", name: "Whole Tilapia", brand: "", size: "Approx. 2 lb", cat: "specialties", price: 9.99, weight: 2, storage: "frozen", ship: false, stock: "in" },
-    { id: "dried-fish", name: "Smoked Dried Fish", brand: "", size: "Per pack", cat: "specialties", price: 11.99, weight: 0.6, storage: "shelf", ship: false, stock: "low", note: "Shipping restrictions on dried fish to be reviewed" },
-    { id: "cassava-leaves", name: "Frozen Cassava Leaves", brand: "", size: "1 lb", cat: "specialties", price: 3.99, weight: 1, storage: "frozen", ship: false, stock: "in" },
-    { id: "shea-butter", name: "Unrefined Shea Butter", brand: "", size: "8 oz", cat: "care", price: 7.99, weight: 0.6, storage: "shelf", ship: true, stock: "in" },
-    { id: "black-soap", name: "African Black Soap", brand: "", size: "12 oz", cat: "care", price: 9.49, weight: 0.9, storage: "shelf", ship: true, stock: "in", liquid: true }
+    { id: "lamb-leg", name: "Halal Lamb Leg", brand: "Butcher counter", size: "Per lb", cat: "halal", price: 10.49, weight: 1, storage: "chilled", ship: false, stock: "in" },
+    { id: "beef-stew", name: "Halal Beef Stew Cuts", brand: "Butcher counter", size: "Per lb", cat: "halal", price: 7.99, weight: 1, storage: "chilled", ship: false, stock: "in" }
   ];
   const PRODUCT_CATS = [
-    { id: "rice", tone: "#E9B949", label: "Rice, grains & flour", photo: null },
-    { id: "spices", tone: "#D9532B", label: "Spices & seasonings", photo: null },
-    { id: "halal", tone: "#A3263F", label: "Halal meats", photo: null },
-    { id: "pantry", tone: "#E07A2E", label: "Pantry essentials", photo: null },
-    { id: "drinks", tone: "#2E8B7A", label: "Beverages", photo: null },
-    { id: "snacks", tone: "#F0C64A", label: "Snacks", photo: null },
-    { id: "specialties", tone: "#6A8F3C", label: "International specialties", photo: null },
-    { id: "care", tone: "#B79A7A", label: "Home & personal care", photo: null }
+    { id: "rice", tone: "#E9B949", label: "Rice, grains & flour" },
+    { id: "spices", tone: "#D9532B", label: "Spices & seasonings" },
+    { id: "pantry", tone: "#E07A2E", label: "Pantry essentials" },
+    { id: "breakfast", tone: "#2E8B7A", label: "Milk & breakfast" },
+    { id: "halal", tone: "#A3263F", label: "Halal meats" }
   ];
 
   const SPECIALS = [
     { id: "s1", side: "kitchen", title: "Weekend lamb plate", body: "Grilled Lamb Plate with a free side of plantains, Friday to Sunday.", ref: "grilled-lamb", active: true },
-    { id: "s2", side: "market", title: "Stock-up rice week", body: "10% off 20 lb rice bags while the promotion runs.", ref: "jasmine-rice-20", active: true },
-    { id: "s3", side: "market", title: "Seasoning bundle", body: "Any three spice jars for one bundle price.", ref: "curry-powder", active: false }
+    { id: "s2", side: "market", title: "Stock-up rice week", body: "10% off Tropical Sun Fragrant Rice while the promotion runs.", ref: "tropical-sun-fragrant-rice", active: true },
+    { id: "s3", side: "market", title: "Seasoning bundle", body: "Any three spice jars for one bundle price.", ref: "maggi-chicken-cubes", active: false }
   ];
 
   const MOCK_ORDERS = [

@@ -10,7 +10,8 @@ Static site, no build step, no dependencies (Google Fonts only). Deploy by dragg
 - `app.js` — ordering, cart, checkout simulation, owner dashboard
 - `styles.css` — design system (forest green, cream, terracotta, gold; Fraunces + Figtree)
 - `images/` — two sharp photographs supplied by Medina: the storefront and a market aisle (low-resolution photos were removed). Add `images/dalal-logo.png` and the footer shows the Dalal logo in place of the text wordmark.
-- `images/menu/` and `images/products/` — **photo slots.** Drop in a real dish photo or licensed product packshot, then add `photo: "filename.jpg"` to that item in `data.js`. It appears on the menu, dish sheet, product tiles and product page automatically. Until then, dishes are shown as a typographic menu and products as labelled colour swatches (no illustrations, no generated packaging).
+- `images/products/` — 12 real package photos (same set as the Africa Supermarket demo; source site credited per product in `data.js`). `images/menu/` — dish photo slot.
+- **Adding photos:** Drop in a real dish photo or licensed product packshot, then add `photo: "filename.jpg"` to that item in `data.js`. It appears on the menu, dish sheet, product tiles and product page automatically. Until then, dishes are shown as a typographic menu and products as labelled colour swatches (no illustrations, no generated packaging).
 
 ## What is real vs illustrative
 - Verified: name, address (3116 S Hamilton Road, Columbus, OH 43232), phone (614) 322-0076.

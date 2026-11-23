@@ -89,7 +89,7 @@ h1[tabindex="-1"]:focus,main:focus{outline:none}
 
 /* ===== AISLES ===== */
 .aisles{padding-block:clamp(48px,6vw,88px)}
-.aisle-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.aisle-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
 .aisle{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:168px;padding:20px;border-radius:var(--r);background:var(--t);color:var(--ink,var(--char));text-decoration:none;overflow:hidden;transition:transform .25s,box-shadow .25s;isolation:isolate}
 .aisle::before{content:"";position:absolute;right:-40px;bottom:-60px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.14);z-index:-1;transition:transform .4s}
 .aisle:hover{transform:translateY(-4px);box-shadow:0 18px 30px -18px rgba(0,0,0,.45)}
@@ -254,7 +254,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--em);box-
 .pv-brand{font:800 18px/1.1 var(--sans);font-stretch:85%;letter-spacing:.01em;color:color-mix(in srgb,var(--t) 55%,#000);text-transform:uppercase}
 .pv-size{font:italic 400 19px/1.2 var(--serif);margin-top:6px;color:#3b3d3a}
 .pv-pending{position:absolute;bottom:10px;left:0;right:0;font-size:12.5px;color:rgba(27,30,28,.5)}
-.pv.has-photo{padding:0;background:#fff}.pv.has-photo::before{display:none}.pv.has-photo img{width:100%;height:100%;object-fit:contain}
+.pv.has-photo{padding:6%;background:#fff}.pv.has-photo::before{display:none}.pv.has-photo img{width:100%;height:100%;object-fit:contain}
 .pv-big{border-radius:18px;aspect-ratio:1/1}.pv-big .pv-brand{font-size:clamp(26px,3vw,40px)}.pv-big .pv-size{font-size:26px}.pv-big .pv-pending{font-size:14px;bottom:16px}
 .pr-txt{display:flex;flex-direction:column;gap:2px}
 .pr-brand{font-size:13px;font-weight:700;color:var(--chili);margin:0}
@@ -409,6 +409,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--em);box-
   .hdr-act{margin-left:auto}
   .hero-panel{width:min(560px,62vw)}
   .aisle-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .aisle-grid .aisle:first-child{grid-column:1/-1}
   .kitchen-in,.week-grid,.phead,.menu-layout,.catering,.pdp-main,.co,.story,.visit,.ftr-top,.ftr-main{grid-template-columns:1fr}
   .orderpanel,.co-r{position:static}
   .orderpanel{display:none}

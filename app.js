@@ -70,7 +70,7 @@ function slots() {
 const dishImg = (d, cls) => d.photo ? `<img class="${cls}" src="images/menu/${esc(d.photo)}" alt="${esc(d.name)} at Medina" loading="lazy">` : "";
 function prodVisual(p, big) {
   const c = cat(p.cat);
-  if (p.photo) return `<div class="pv${big ? " pv-big" : ""} has-photo"><img src="images/products/${esc(p.photo)}" alt="${esc(p.name)}" loading="lazy"></div>`;
+  if (p.photo) return `<div class="pv${big ? " pv-big" : ""} has-photo"><img src="images/products/${esc(p.photo)}" alt="${esc([p.brand, p.name, p.size].filter(Boolean).join(" "))} package" loading="lazy" width="640" height="640"></div>`;
   return `<div class="pv${big ? " pv-big" : ""}" style="--t:${c.tone}" aria-hidden="true"><span class="pv-brand">${esc(p.brand || c.label)}</span><span class="pv-size">${esc(p.size)}</span><span class="pv-pending">Photo pending</span></div>`;
 }
 const stock = p => ({ in: `<span class="stk s-in">In stock</span>`, low: `<span class="stk s-low">Low stock</span>`, out: `<span class="stk s-out">Out of stock</span>` }[p.stock]);
@@ -217,14 +217,14 @@ function renderItem(id) {
   const c = cat(p.cat), rel = D.PRODUCTS.filter(x => x.cat === p.cat && x.id !== p.id).slice(0, 4);
   el.innerHTML = `<nav class="crumbs" aria-label="Breadcrumb"><a href="#market">World Market</a><span aria-hidden="true">/</span><a href="#market" data-gocat="${p.cat}">${esc(c.label)}</a></nav>
    <div class="pdp-main">${prodVisual(p, true)}<div class="pdp-info">
-     <p class="pr-brand">${esc(p.brand || c.label)}</p><h1>${esc(p.name)}</h1><p class="pdp-size">${esc(p.size)}</p>
+     <p class="pr-brand">${esc(p.brand || c.label)}</p><h1>${esc(p.name)}</h1>${p.size ? `<p class="pdp-size">${esc(p.size)}</p>` : ""}
      <p class="pdp-price">${money(p.price)} <span class="flag">Illustrative price</span></p>
      <div class="pdp-buy">${buy(p)}${favBtn(p)}</div>
      <div class="pdp-meta">${stock(p)}</div>
      <dl class="specs"><dt>Category</dt><dd>${esc(c.label)}</dd><dt>Storage</dt><dd>${storage(p)}</dd><dt>Shipping weight</dt><dd>${p.weight} lb${p.size.startsWith("Per lb") ? " per lb" : ""}</dd>
        <dt>Nationwide shipping</dt><dd>${p.ship ? "Eligible (proposed)" + (p.liquid ? ", packed as a liquid" : "") : "Not eligible — " + (p.storage !== "shelf" ? storage(p).toLowerCase() + " product, pickup or local only" : esc(p.note || "pickup only"))}</dd>
        <dt>Pickup</dt><dd>3116 S Hamilton Road</dd></dl>
-     <p class="note">Illustrative listing: brand, size, price and stock to be confirmed by Medina.</p></div></div>
+     <p class="note">Real product and package photo${p.credit ? ` (photo: ${esc(p.credit)})` : ""}. Not yet confirmed as Medina inventory; price and stock are illustrative.</p></div></div>
    ${rel.length ? `<h2 class="rel-h">More in ${esc(c.label)}</h2><div class="plist">${rel.map(pRow).join("")}</div>` : ""}`;
 }
 function setMQ(id, d) {
